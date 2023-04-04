@@ -11,6 +11,9 @@ author = "KATO Jinnosuke"
 description = "ものづくりコンテストについての情報をまとめたWikiです"
 collapsibleMenu = true
 
+[outputs]
+  home = ["HTML", "SEARCH", "SEARCHPAGE"]
+
 [[menu.shortcuts]]
 name = "<i class='fa-regular fa-link'></i> ものコン公式サイト"
 url = "http://zenkoukyo.or.jp/index_contest/mono_index/"
