@@ -6,6 +6,11 @@ theme = 'hugo-theme-relearn'
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
 
+[params]
+author = "KATO Jinnosuke"
+description = "ものづくりコンテストについての情報をまとめたWikiです"
+collapsibleMenu = true
+
 [[menu.shortcuts]]
 name = "<i class='fa-regular fa-link'></i> ものコン公式サイト"
 url = "http://zenkoukyo.or.jp/index_contest/mono_index/"
