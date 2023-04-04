@@ -12,7 +12,9 @@ description = "ものづくりコンテストについての情報をまとめ�
 collapsibleMenu = true
 
 [outputs]
-  home = ["HTML", "SEARCH", "SEARCHPAGE"]
+  home = ["HTML", "PRINT", "SEARCH"]
+  section = ["HTML", "PRINT"]
+  page = ["HTML", "PRINT"]
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-tags'></i> タグ一覧"
