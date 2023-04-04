@@ -12,7 +12,7 @@ description = "ものづくりコンテストについての情報をまとめ�
 collapsibleMenu = true
 
 [outputs]
-  home = ["HTML", "PRINT", "SEARCH"]
+  home = ["HTML", "PRINT", "SEARCH", "SEARCHPAGE"]
   section = ["HTML", "PRINT"]
   page = ["HTML", "PRINT"]
 
