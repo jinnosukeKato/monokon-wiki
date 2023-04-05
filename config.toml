@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://jinnosukekato.github.io/monokon-wiki/'
 languageCode = 'ja'
 title = 'ものコン-wiki'
 theme = 'hugo-theme-relearn'
