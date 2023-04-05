@@ -1,7 +1,7 @@
 +++
 archetype = "home"
 title = "ハードウェア"
-weight = 2
+weight = 10
 +++
 
 このセクションでは、ハードウェアについて解説します

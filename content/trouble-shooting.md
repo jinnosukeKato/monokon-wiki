@@ -1,7 +1,7 @@
 +++
 title = "動かないときは"
 description = "トラブルシューティングのページ"
-weight = 4
+weight = 50
 tags = ["基礎", "資料"]
 +++
 
