@@ -7,7 +7,7 @@ tags = ["解説", "組み込み関数", "基礎"]
 
 ## 説明
 
-[`tone`](/arduino言語解説/embedded-functions/tone/) で鳴らした音を消す関数です
+[`tone`](/software/embedded-functions/tone/) で鳴らした音を消す関数です
 
 ## 注意すべき点
 

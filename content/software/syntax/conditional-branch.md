@@ -1,6 +1,6 @@
 +++
 title = "条件分岐"
-description = "条件分岐構文についての解説"
+description = "条件分岐文についての解説"
 tags = ["解説", "基礎", "構文"]
 weight = 4
 +++
@@ -15,7 +15,7 @@ weight = 4
 
 条件は `bool` 型で与えます  
 各種スイッチなどの入力値を与えたり、
-[比較演算子](/arduino言語解説/operators/#比較演算子) と [論理演算子](/arduino言語解説/operators/#論理演算子)
+[比較演算子](/software/syntax/operators/#比較演算子) と [論理演算子](/software/syntax/operators/#論理演算子)
 と入力値を組み合わせたりして条件を与えます
 
 `else if` 句によって一つ目の条件に合致しない場合、別の条件を与えて分岐させることもできます  

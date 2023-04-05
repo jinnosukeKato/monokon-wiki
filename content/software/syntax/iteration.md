@@ -34,7 +34,7 @@ for (int i = 0; i <= 9; i++) {
 ## while文
 
 任意の処理を条件が真になるまで繰り返して実行する文です  
-条件は [if文](/arduino言語解説/conditional-branch/#if文) と同じように指定します
+条件は [if文](/software/syntax/conditional-branch/#if文) と同じように指定します
 
 `break` 文が処理中にあった場合、ループを強制的に抜け出します  
 `continue` 文が処理中にあった場合には、 `continue` 文以降の処理を一度スキップしてループを続けます

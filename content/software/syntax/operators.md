@@ -54,7 +54,7 @@ a = ++b; // a = 2, b = 2 となり、インクリメント=>代入 となる
 
 二つの値を**比較**することができる演算子です
 
-主に [if文](/arduino言語解説/conditional-branch/#if文)
+主に [if文](/software/syntax/conditional-branch/#if文)
 で使用します
 
 | 比較演算子 | 例     | 意味             |  

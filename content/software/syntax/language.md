@@ -1,5 +1,5 @@
 +++
-title = "Arduino言語"
+title = "基礎構文"
 description = "プログラムの流れを制御する2つの関数についての解説"
 tags = ["解説","基礎", "構文"]
 weight = 1

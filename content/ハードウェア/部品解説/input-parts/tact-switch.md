@@ -10,7 +10,7 @@ tags = ["ハードウェア", "部品", "解説", "基礎", "入力部品"]
 
 ## 使用方法
 
-[`digitalRead`](/arduino言語解説/embedded-functions/digitalread) 関数を用いて値を読み取ります
+[`digitalRead`](/software/embedded-functions/digitalread) 関数を用いて値を読み取ります
 
 ## サンプルコード
 
