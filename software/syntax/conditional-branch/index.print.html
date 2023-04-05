@@ -1,0 +1,49 @@
+<!doctype html><html lang=ja dir=ltr><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.111.3"><meta name=generator content="Relearn 5.12.5+tip"><meta name=description content="条件分岐文についての解説"><meta name=author content="KATO Jinnosuke"><title>条件分岐 :: ものコン-wiki</title><link href=http://example.org/software/syntax/conditional-branch/index.html rel=canonical type=text/html title="条件分岐 :: ものコン-wiki"><link href=/css/fontawesome-all.min.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fontawesome-all.min.css?1680658252 rel=stylesheet></noscript><link href=/css/nucleus.css?1680658252 rel=stylesheet><link href=/css/auto-complete.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/auto-complete.css?1680658252 rel=stylesheet></noscript><link href=/css/perfect-scrollbar.min.css?1680658252 rel=stylesheet><link href=/css/fonts.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fonts.css?1680658252 rel=stylesheet></noscript><link href=/css/theme.css?1680658252 rel=stylesheet><link href=/css/theme-auto.css?1680658252 rel=stylesheet id=variant-style><link href=/css/variant.css?1680658252 rel=stylesheet><link href=/css/print.css?1680658252 rel=stylesheet media=print><link href=/css/format-print.css?1680658252 rel=stylesheet><link href=/css/ie.css?1680658252 rel=stylesheet><script src=/js/url.js?1680658252></script>
+<script src=/js/variant.js?1680658252></script>
+<script>window.index_js_url="/index.search.js";var root_url="/",baseUriFull,baseUri=root_url.replace(/\/$/,"");window.T_Copy_to_clipboard="クリップボードにコピー",window.T_Copied_to_clipboard="クリップボードにコピー!",window.T_Copy_link_to_clipboard="リンクをクリップボードにコピー",window.T_Link_copied_to_clipboard="リンクをクリップボードにコピーしました!",window.T_No_results_found="\u0022{0}\u0022 の結果が見つかりません",window.T_N_results_found="\u0022{0}\u0022 で {1} 件の結果が見つかりました",baseUriFull="http://example.org/",window.variants&&variants.init(["auto"])</script></head><body class="mobile-support print" data-url=/software/syntax/conditional-branch/index.html><div id=body class=default-animation><div id=sidebar-overlay></div><div id=toc-overlay></div><nav id=topbar class=highlightable><div><div id=breadcrumbs><span id=sidebar-toggle-span><a href=# id=sidebar-toggle class=topbar-link title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a></span><ol class=links itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/index.html><span itemprop=name>ものコン wiki</span></a><meta itemprop=position content="1">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/software/index.html><span itemprop=name>ソフトウェア</span></a><meta itemprop=position content="2">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/software/syntax/index.html><span itemprop=name>構文</span></a><meta itemprop=position content="3">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>条件分岐</span><meta itemprop=position content="4"></li></ol></div></div></nav><main id=body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><div id=head-tags><div class=tags><a class=tag-link href=/tags/%E8%A7%A3%E8%AA%AC/index.html>解説</a>
+<a class=tag-link href=/tags/%E5%9F%BA%E7%A4%8E/index.html>基礎</a>
+<a class=tag-link href=/tags/%E6%A7%8B%E6%96%87/index.html>構文</a></div></div><article class=default><h1 id=条件分岐>条件分岐</h1><p>条件分岐文は、その名の通り、ある条件を評価し、処理を分岐させる文です</p><p>例えば、センサーの値や変数の値によって処理を変えたいときに使用します</p><h2 id=if文>if文</h2><p>与えられた条件によって処理内容を変える文です</p><p>条件は <code>bool</code> 型で与えます<br>各種スイッチなどの入力値を与えたり、
+<a href=/software/syntax/operators/#%e6%af%94%e8%bc%83%e6%bc%94%e7%ae%97%e5%ad%90>比較演算子</a> と <a href=/software/syntax/operators/#%e8%ab%96%e7%90%86%e6%bc%94%e7%ae%97%e5%ad%90>論理演算子</a>
+と入力値を組み合わせたりして条件を与えます</p><p><code>else if</code> 句によって一つ目の条件に合致しない場合、別の条件を与えて分岐させることもできます<br><code>else if</code> 句は複数回連続して記述することが可能です</p><p>また、<code>else</code> 句によってどの条件にも合致しない場合の処理を記述することもできます</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#66d9ef>if</span> (a <span style=color:#f92672>!=</span> b) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しくない場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (a <span style=color:#f92672>==</span> b) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しい場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しくない場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (a <span style=color:#f92672>==</span> b) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しい場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>if</span> (a <span style=color:#f92672>&lt;</span> b) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しくないかつ、aがbより小さい場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>if</span> (a <span style=color:#f92672>!=</span> <span style=color:#ae81ff>42</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しくないかつ、aがbより小さくなく、aが42ではない場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 上の3つの条件すべてに当てはまらない場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (a <span style=color:#f92672>==</span> b <span style=color:#f92672>&amp;&amp;</span> a <span style=color:#f92672>!=</span> c) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// aがbと等しいかつ、 aがcと等しくない場合の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><h2 id=switch文>switch文</h2><p>与えられた変数がどの値かによって処理を変える文です</p><p><a href=#if%e6%96%87>if文</a> は条件で分岐するのに対し、 <code>switch</code> 文 は一つの変数がどの値かという点で処理を分岐します</p><p><code>case</code> 句の後に分岐させる場合の定数を書きます</p><p>処理の終わりには必ず <code>break</code> 文を書きます<br><code>break</code> 文がない場合、次の <code>break</code> 文までに記述されている処理すべてが行われます</p><p><code>default</code> 句の後にはどの条件にも当てはまらない場合に実行される内容を書きます</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#66d9ef>int</span> x <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>switch</span> (x) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// xが1の時の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// xが2の時の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>3</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>4</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// x が3か4の時の処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// どの条件にも当てはまらないときの処理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><footer class=footline></footer></article></div></main></div><script src=/js/clipboard.min.js?1680658252 defer></script>
+<script src=/js/perfect-scrollbar.min.js?1680658252 defer></script>
+<script src=/js/theme.js?1680658252 defer></script></body></html>

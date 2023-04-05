@@ -1,0 +1,51 @@
+<!doctype html><html lang=ja dir=ltr><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.111.3"><meta name=generator content="Relearn 5.12.5+tip"><meta name=description content="トラブルシューティングのページ"><meta name=author content="KATO Jinnosuke"><title>動かないときは :: ものコン-wiki</title><link href=http://example.org/trouble-shooting/index.html rel=canonical type=text/html title="動かないときは :: ものコン-wiki"><link href=/css/fontawesome-all.min.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fontawesome-all.min.css?1680658252 rel=stylesheet></noscript><link href=/css/nucleus.css?1680658252 rel=stylesheet><link href=/css/auto-complete.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/auto-complete.css?1680658252 rel=stylesheet></noscript><link href=/css/perfect-scrollbar.min.css?1680658252 rel=stylesheet><link href=/css/fonts.css?1680658252 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/css/fonts.css?1680658252 rel=stylesheet></noscript><link href=/css/theme.css?1680658252 rel=stylesheet><link href=/css/theme-auto.css?1680658252 rel=stylesheet id=variant-style><link href=/css/variant.css?1680658252 rel=stylesheet><link href=/css/print.css?1680658252 rel=stylesheet media=print><link href=/css/format-print.css?1680658252 rel=stylesheet><link href=/css/ie.css?1680658252 rel=stylesheet><script src=/js/url.js?1680658252></script>
+<script src=/js/variant.js?1680658252></script>
+<script>window.index_js_url="/index.search.js";var root_url="/",baseUriFull,baseUri=root_url.replace(/\/$/,"");window.T_Copy_to_clipboard="クリップボードにコピー",window.T_Copied_to_clipboard="クリップボードにコピー!",window.T_Copy_link_to_clipboard="リンクをクリップボードにコピー",window.T_Link_copied_to_clipboard="リンクをクリップボードにコピーしました!",window.T_No_results_found="\u0022{0}\u0022 の結果が見つかりません",window.T_N_results_found="\u0022{0}\u0022 で {1} 件の結果が見つかりました",baseUriFull="http://example.org/",window.variants&&variants.init(["auto"])</script></head><body class="mobile-support print" data-url=/trouble-shooting/index.html><div id=body class=default-animation><div id=sidebar-overlay></div><div id=toc-overlay></div><nav id=topbar class=highlightable><div><div id=breadcrumbs><span id=sidebar-toggle-span><a href=# id=sidebar-toggle class=topbar-link title='メニュー (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a></span><ol class=links itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/index.html><span itemprop=name>ものコン wiki</span></a><meta itemprop=position content="1">></li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>動かないときは</span><meta itemprop=position content="2"></li></ol></div></div></nav><main id=body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><div id=head-tags><div class=tags><a class=tag-link href=/tags/%E5%9F%BA%E7%A4%8E/index.html>基礎</a>
+<a class=tag-link href=/tags/%E8%B3%87%E6%96%99/index.html>資料</a></div></div><article class=default><h1 id=動かないときは>動かないときは</h1><p><strong>エラーコードが出てるときはエラーコードを読む！</strong></p><p>エラーコードは赤色で、英語で、よくわからなくて、怖いかもしれませんが、恐れることはありません<br>エラーコードと仲良くなりましょう</p><p>このページを読んでも分からないときは、ほかの部員に相談しましょう</p><h2 id=とにかく動かないとき>とにかく動かないとき</h2><div class="mermaid align-center">flowchart TD
+Root(["動かない！"]) --> CanCompile{"コンパイルが通るか"};
+CanCompile -- yes --> Program{"プログラムの内容は正しいか\n(分からなければ他人に読んでもらう)"};
+CanCompile -- no --> USBConnection{"PCとArduinoが接続されているか"};
+USBConnection -- yes --> PortSetting{"ポートの指定は正しいか"};
+PortSetting -- yes -->SyntaxErr["プログラムの構文が正しくない\nエラーコードを読んで修正"];
+PortSetting -- no --> ChangePort["ポートの指定を直す"];
+USBConnection -- no --> ConnectUSB["USBを接続する"];
+Program -- yes --> Hardware;
+Program -- no --> 正しいプログラムを書く;
+Hardware["ハードウェアに\n問題がある可能性が高い"] --> PowerOkay{"電源が接続されているか"};
+PowerOkay -- yes --> TapOkay{"電源タップに通電しているか"};
+PowerOkay -- no --> PowerTurnOn["電源を接続する"];
+TapOkay -- yes --> ActOtherPart{"動かない部品は一つか"};
+TapOkay -- no --> ConnectTap["タップを接続する"];
+ActOtherPart -- yes --> IsConnectionErr{"ワイヤーが断線しているか"};
+IsConnectionErr -- yes --> ConnectionErr;
+IsConnectionErr -- no --> PartFailure["パーツもしくは\nICが故障している"];
+ActOtherPart -- no --> IsPluralPartsFailure{"すべてのパーツが動かないか"};
+IsPluralPartsFailure -- yes --> IsArduinoErr{"Arduinoと\n制御対象基盤との\n接続はできているか"};
+IsPluralPartsFailure -- no --> IcFailure["制御対象基盤の\nICか回路の故障が疑わしい"];
+IsArduinoErr -- yes --> ArduinoErr;
+IsArduinoErr -- no --> ConnectionErr;
+ArduinoErr["Arduinoの故障が疑われる"]
+ConnectionErr["基板or部品間の接続を直す"]</div><h2 id=プログラムのどこが間違っているかわからないとき>プログラムのどこが間違っているかわからないとき</h2><div class="mermaid align-center">flowchart TD
+ROOT["動かない！"] --> ExplainToTheDuckRoopS;
+ExplainToTheDuckRoopS[/"一行ずつ読む"\] --> ExPlainToTheDuck;
+ExPlainToTheDuck["誰かに説明するようにじっくり読む"] --> CheckSyntaxErr;
+CheckSyntaxErr{"間違っている箇所を発見した"};
+CheckSyntaxErr -- yes --> Fix["修正する"] --> Run;
+Run{"正しく動作するか"};
+Run -- yes --> End["修正完了"];
+Run -- no --> ROOT;
+CheckSyntaxErr -- no --> ExplainToTheDuckRoopE[\全文読んだ/];
+ExplainToTheDuckRoopE -- yes --> 他人に相談;
+ExplainToTheDuckRoopE -- no --> ExplainToTheDuckRoopS;</div><footer class=footline></footer></article></div></main></div><script src=/js/clipboard.min.js?1680658252 defer></script>
+<script src=/js/perfect-scrollbar.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-color.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-dispatch.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-drag.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-ease.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-interpolate.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-selection.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-timer.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-transition.min.js?1680658252 defer></script>
+<script src=/js/d3/d3-zoom.min.js?1680658252 defer></script>
+<script src=/js/mermaid.min.js?1680658252 defer></script>
+<script>window.themeUseMermaid=JSON.parse("{}")</script><script src=/js/theme.js?1680658252 defer></script></body></html>
