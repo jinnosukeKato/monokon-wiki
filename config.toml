@@ -12,6 +12,7 @@ hasCJKLanguage = true
 author = "KATO Jinnosuke"
 description = "ものづくりコンテストについての情報をまとめたWikiです"
 collapsibleMenu = true
+themeVariant = [ "relearn-light", "relearn-dark" ]
 
 [outputs]
   home = ["HTML", "PRINT", "SEARCH", "SEARCHPAGE"]
