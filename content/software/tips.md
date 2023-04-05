@@ -1,6 +1,7 @@
 +++
-title = "応用編"
-draft = true
+title = "tips"
+tags = ["資料", "応用"]
+weight = 35
 +++
 
 ## HIGH, LOWの書き換え
