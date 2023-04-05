@@ -50,6 +50,24 @@ void clock() {
 }
 ```
 
+また、名前が同じでも引数が違う複数個の関数を宣言する(オーバーロード)こともできます
+
+```c++
+// 5msで固定のクロック
+void clock() {
+    digitalWrite(5, 1);
+    delay(5);
+    digitalWrite(5, 0);
+}
+
+// 秒数を指定できるバージョン
+void clock(int ms) {
+    digitalWrite(5, 1);
+    delay(ms);
+    digitalWrite(5, 0);
+}
+```
+
 ## スコープ
 
 関数にも[変数](/software/syntax/variables/#スコープ)と同様にスコープの概念があるので、宣言の際には気を付けましょう
