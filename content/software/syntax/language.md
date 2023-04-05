@@ -9,7 +9,7 @@ weight = 1
 
 この関数はプログラムが実行されたあとに**一度だけ**呼び出されます
 
-この関数の中には [`pinMode`](よく使う関数#pinmode) など最初に一度だけ行えばよい処理を記述します
+この関数の中には [`pinMode`](/software/embedded-functions/pinmode) など最初に一度だけ行えばよい処理を記述します
 
 ```c++
 // 2番ピンをアウトプットとして指定する
@@ -20,7 +20,7 @@ void setup() {
 
 ## [loop()](https://www.arduino.cc/reference/en/language/structure/sketch/loop/)
 
-この関数は [`setup()`](Arduino言語解説-基礎編#setup) が呼び出された後に名前の通り**繰り返し**実行されます
+この関数は [`setup()`](#setup) が呼び出された後に名前の通り**繰り返し**実行されます
 
 プログラムの主な処理内容はこの関数の中に記述します
 
