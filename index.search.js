@@ -176,7 +176,7 @@ digitalWrite(5, HIGH); // ↓ digitalWrite(5, 1); 書き換えることで二次
 digitalWrite(5, 1); // ここの時点で信号が流れる delay(5); digitalWrite(5, 0); これを利用すると、ステッピングモーターなどのクロックの待ち時間の間に7セグメントを動作させることができ、7セグメントのちらつきや輝度の低下を防ぐことができます
 Arduino言語とは Arduino言語という表記でこのwikiでは統一していますが、Arduino言語の本質はC++言語です
 Arduino IDEでプログラムをビルドすると、自動的に Arduino.h というヘッダファイルとリンクが行われます
-この Arduino.h はArduinoを操作するための基本的なライブラリとなっていて、普段使うdigitalWriteのような関数、HIGH 、LOW などの定数はこのライブラリに記述されています
+この Arduino.h はArduinoを操作するための基本的なライブラリとなっていて、 普段使うdigitalWriteのような関数、HIGH 、LOW などの定数はこのライブラリに記述されています
 `,description:"",tags:["資料","応用"],title:"tips",uri:"/software/tips/index.html"},{content:`作る機会の多い関数のサンプルを集めました
 参考にしてもらって構いませんが、まずは自分で考えることが大事です
 また、このサンプルのピンは Arduino MEGA を前提としているので、 UNO(小さいほう)を使うときは逐次書き換えてください
