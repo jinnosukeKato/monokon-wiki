@@ -3,6 +3,8 @@ languageCode = 'ja'
 title = 'ものコン-wiki'
 theme = 'hugo-theme-relearn'
 
+canonifyURLs = true # 絶対パス指定
+
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
 
