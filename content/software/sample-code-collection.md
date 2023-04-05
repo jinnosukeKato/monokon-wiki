@@ -1,12 +1,19 @@
++++
+title = "サンプルコード集"
+tags = ["資料"]
+weight = 40
++++
+
 作る機会の多い関数のサンプルを集めました
 
 参考にしてもらって構いませんが、**まずは自分で考えることが大事です**
 
 また、このサンプルのピンは Arduino MEGA を前提としているので、 UNO(小さいほう)を使うときは逐次書き換えてください
 
-# クロック
+## クロック
 
-[ステッピングモーター](https://github.com/jinnosukeKato/Monokon/wiki/パーツについて#ステッピングモーター)、[DCモーター](https://github.com/jinnosukeKato/Monokon/wiki/パーツについて#dcモーター)を回転させるときに使うクロックです
+[ステッピングモーター](/hardware/about-parts/output-parts/stepper)、
+[DCモーター](/hardware/about-parts/output-parts/dc-motor)を回転させるときに使うクロックです
 
 ```c++
 void clock() {
@@ -16,7 +23,8 @@ void clock() {
 }
 ```
 
-[delay](https://github.com/jinnosukeKato/Monokon/wiki/よく使う関数#delay) の秒数を指定できるバージョン
+[delay](/software/embedded-functions/delay) の秒数を指定できるバージョン
+
 ```c++
 void clock(int ms) {
     digitalWrite(5, 1);
@@ -25,9 +33,9 @@ void clock(int ms) {
 }
 ```
 
-# ステッピングモーター
+## ステッピングモーター
 
-[ステッピングモーター](https://github.com/jinnosukeKato/Monokon/wiki/パーツについて#ステッピングモーター)を回転させる関数です
+[ステッピングモーター](/hardware/about-parts/output-parts/stepper)を回転させる関数です
 
 二次元配列をパターンに使用した例
 
@@ -62,9 +70,9 @@ void stepper() {
 }
 ```
 
-# 7セグメント
+## 7セグメント
 
-[7セグメント](https://github.com/jinnosukeKato/Monokon/wiki/パーツについて#7セグメント)を光らせるためのいろいろな関数です
+[7セグメント](/hardware/about-parts/output-parts/seven-segment)を光らせるためのいろいろな関数です
 
 ```c++
 // 点灯パターン
@@ -118,20 +126,22 @@ void segW(int l, int r, int duration) {
 }
 ```
 
-# ステッピングモーターと7セグメント
+## ステッピングモーターと7セグメント
 
-あえてここにはコードを書かないけど、ヒントは
+県大会レベルでは一番の難関だと思うので、あえてここにはコードを書きませんが、ヒントは
+
 - ステッピングモータのクロックの前に余計な信号を入れないこと
 - ステッピングモータのクロックの間も7セグメントを点灯させること
+
 です
 
-どうしてもコードが見たければ自分のリポジトリに多分書いてあるので見てください
-https://github.com/jinnosukeKato/Monokon-Kanagawa-2022
+どうしてもコードが見たければ以下のリポジトリに書いてあるので見てください
+<https://github.com/jinnosukeKato/Monokon-Kanagawa-2022>
 
-# 押して離されたら(バンプ)
+## 押して離されたら(バンプ)
 
 ```c++
-#define SW 22
+const int SW = 22;
 
 void loop() {
   while(digitalRead(SW) == 1) {
