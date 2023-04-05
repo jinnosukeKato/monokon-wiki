@@ -35,4 +35,5 @@ digitalWrite(5, 0);
 Arduino言語という表記でこのwikiでは統一していますが、Arduino言語の本質はC++言語です
 
 Arduino IDEでプログラムをビルドすると、自動的に `Arduino.h` というヘッダファイルとリンクが行われます  
-この `Arduino.h` はArduinoを操作するための基本的なライブラリとなっていて、普段使う[digitalWrite](よく使う関数#digitalwrite)のような関数、`HIGH` 、`LOW` などの定数はこのライブラリに記述されています
+この `Arduino.h` はArduinoを操作するための基本的なライブラリとなっていて、
+普段使う[digitalWrite](/software/embedded-functions/digitalwrite)のような関数、`HIGH` 、`LOW` などの定数はこのライブラリに記述されています
