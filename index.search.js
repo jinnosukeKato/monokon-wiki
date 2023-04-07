@@ -14,7 +14,7 @@ Arduino IDE ダウンロードページ https://www.arduino.cc/en/software
 詳しくはピン対応表を参照してください
 この WIKI のリポジトリ https://github.com/jinnosukeKato/monokon-wiki
 加筆修正依頼 この WIKI 内で何か間違っていたり、加筆してほしい部分があればリポジトリに issue を立てるか連絡してください
-`,description:"ホームページ",tags:null,title:"ものコン wiki",uri:"/index.html"},{content:`このページでは、ものコン(電子回路組立部門)がどんなことをするのか簡単に説明します
+`,description:"ものづくりコンテストについての知見をまとめたウィキです",tags:null,title:"ものコン wiki",uri:"/index.html"},{content:`このページでは、ものコン(電子回路組立部門)がどんなことをするのか簡単に説明します
 正式名称 正式名称は 高校生ものづくりコンテスト(電子回路組立部門) と言います
 通称 ものコン です
 部門概要 様々ある部門の中で私たちは電子回路組立部門に出場します
@@ -224,7 +224,21 @@ int に値を代入することも可能ですが、 unsigned long は int や l
 サンプルコード noTone(ピン番号); // 4番で鳴らした音を1秒後に消す tone(4, 440); delay(1000); noTone(4); `,description:"",tags:["解説","組み込み関数","基礎"],title:"noTone",uri:"/software/embedded-functions/notone/index.html"},{content:`リファレンス 説明 指定したピンをインプットもしくはアウトプットとして設定します
 入力を読み取る場合(スイッチやセンサー)にはインプットを、出力を行う場合にはアウトプットを指定してください
 注意すべき点 pinMode 関数を使用しない場合でもプログラムが動作することがありますが、 pinMode 関数は内部インピーダンスを用途に合わせて切り替えているので、 なるべく指定するようにしてください
-サンプルコード pinMode(ピン番号, INPUT); // インプットに指定 pinMode(ピン番号, OUTPUT); // アウトプットに指定 // for-each文を用いた効率的な指定方法 const int output_pins[] = {11, 12, 13, 14, 15}; for(int i : output_pins) { pinMode(i, OUTPUT); } `,description:"",tags:["解説","組み込み関数","基礎"],title:"pinMode",uri:"/software/embedded-functions/pinmode/index.html"},{content:"",description:"",tags:null,title:"Tags",uri:"/tags/index.html"},{content:`リファレンス 説明 指定したピンに指定した周波数の信号を送る関数です
+サンプルコード pinMode(ピン番号, INPUT); // インプットに指定 pinMode(ピン番号, OUTPUT); // アウトプットに指定 // for-each文を用いた効率的な指定方法 const int output_pins[] = {11, 12, 13, 14, 15}; for(int i : output_pins) { pinMode(i, OUTPUT); } `,description:"",tags:["解説","組み込み関数","基礎"],title:"pinMode",uri:"/software/embedded-functions/pinmode/index.html"},{content:`static修飾子は、関数、変数の宣言時につけることによって、様々な効果を変数に付与することができます
+ただし、ほとんどの効果はものづくりコンテストレベルでは使用しないので、 このページでは、 static ローカル変数についてのみ解説します
+宣言 { static int var = 0; } ブロック内(if, ループ, 関数宣言, etc…)で static をつけて変数を宣言することで、 static ローカル変数として宣言することができます
+通常、ブロック内で内容を保存するような変数(カウンターなど)を宣言するときには、以下のように、スコープ外で変数を宣言することが多いでしょう
+// 通常の while ループのカウント int count = 0; while(digitalRead(22) == HIGH) { count++; delay(1000); printf("%d", count); } static 修飾子を使うことで、以下の例のようにすることができます
+while(digitalRead(22) == HIGH) { static int count = 0; count++; delay(1000); printf("%d", count); } 特徴 static ローカル変数は以下の特徴があります
+再宣言されない 内容が保存される スコープ外からは参照できない 再宣言されない static ローカル変数は一度宣言された後、再宣言されません
+while(digitalRead(22) == HIGH) { int count = 0; count++; delay(1000); printf("%d", count); } 上で出した例のcountを通常の変数にした例です
+この場合、ループが何度も回るたびに、countは0として再宣言されてしまいます
+static ローカル変数にすることで、再代入を防ぐことができます
+内容が保存される staticをつけることで内容が保存されます
+一度宣言された static ローカル変数は内容が保存され続けます
+while(digitalRead(22) == HIGH) { static int count = 0; count++; delay(1000); printf("%d", count); } 上記の例では、countは最初に0が代入された後、+1されていきます
+スコープ外からは参照できない // 通常の while ループのカウント int count = 0; while(digitalRead(22) == HIGH) { count++; delay(1000); printf("%d", count); } count += 100; // 意図しないスコープから変数にアクセスできてしまう 通常の宣言では上記のような問題が起こりますが、 static ローカル変数にすることでそれを防ぐことができます
+`,description:"static ローカル変数についての解説ページ",tags:["解説","応用"],title:"static ローカル変数",uri:"/software/syntax/static-local-variable/index.html"},{content:"",description:"",tags:null,title:"Tags",uri:"/tags/index.html"},{content:`リファレンス 説明 指定したピンに指定した周波数の信号を送る関数です
 鳴らし続ける時間(ミリ秒)を指定することも可能です
 注意すべき点 鳴らし続ける時間を指定しなかった場合、 noTone が実行されるまで音が鳴り続けます
 時間を指定した場合、 delay と違い、 時間が経過する間プログラムは停止しません
