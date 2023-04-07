@@ -1,7 +1,7 @@
 +++
 archetype = "home"
 title = "ものコン wiki"
-description = "ホームページ"
+description = "ものづくりコンテストについての知見をまとめたウィキです"
 weight = 1
 +++
 
