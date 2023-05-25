@@ -31,7 +31,7 @@ void clock_start() {
 }
 
 // 定期実行してクロックを停止させる関数
-void　clock_check(unsigned long duration) {
+void clock_check(unsigned long duration) {
     if(millis() - start_ms >= duration) {
         digitalWrite(5, LOW);
     }
