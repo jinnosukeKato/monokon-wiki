@@ -68,15 +68,15 @@ Arduino言語には様々な演算子がありますが、このセクション�
 算術演算子 例 例の演算結果 意味 + 1 + 2 3 足し算 - 2 - 1 1 引き算 * 2 * 2 4 掛け算 / 10 / 5 2 割り算 % 3 % 2 1 割り算の余り = a = 5 aは5 代入 複合演算子 変数に対して代入と計算を同時に行うことのできる演算子です
 複合演算子を使うことでプログラムを簡潔に記述することができます
 複合演算子 例 意味 ++ a++ a = a + 1 – a– a = a - 1 += a += 2 a = a + 2 -= a -= 2 a = a - 2 *= a *= 2 a = a * 2 /= a /= 2 a = a / 2 %= a %= 2 a = a % 2 ++ (インクリメント)と -- (デクリメント)は ++a のように、変数の前に置くこともできますが、意味が変わります
-int a = 0; int b = 1; a = b++; // a = 1, b = 2 となり、代入=\u003eインクリメント となる a = ++b; // a = 2, b = 2 となり、インクリメント=\u003e代入 となる 上記の例のように、インクリメントやデクリメントをした変数の値をほかの変数に代入する場合に、代入結果が変わることに注意してください
+int a = 0; int b = 1; a = b++; // a = 1, b = 2 となり、代入=>インクリメント となる a = ++b; // a = 2, b = 2 となり、インクリメント=>代入 となる 上記の例のように、インクリメントやデクリメントをした変数の値をほかの変数に代入する場合に、代入結果が変わることに注意してください
 比較演算子 二つの値を比較することができる演算子です
 主に if文 で使用します
-比較演算子 例 意味 == a == b aとbが等しいか != a != b aとbが等しくないか \u003c a \u003c b aはb未満か \u003e a \u003e b aはbより大きいか \u003c= a \u003c= b aはb以下か \u003e= a \u003e= b aはb以上か 演算の結果は bool で返ってくるので変数に代入することも可能です
+比較演算子 例 意味 == a == b aとbが等しいか != a != b aとbが等しくないか < a < b aはb未満か > a > b aはbより大きいか <= a <= b aはb以下か >= a >= b aはb以上か 演算の結果は bool で返ってくるので変数に代入することも可能です
 bool var = a == b; 論理演算子 真偽値(boolean)を扱うことができる演算子です
 論理演算を行います
 複数の条件を組み合わせた分岐処理を作成したいときなどに使用します
-論理演算子 例 意味 ! !a NOT \u0026\u0026 a \u0026\u0026 b AND || a || b OR bool t = true; bool f = false; bool not = !t; // false bool and = t \u0026\u0026 f; // false bool or = t || f; // true また、これらの演算子を用いた式は () でまとめることができます
-bool exam = (true \u0026\u0026 false) || (false || true); // true int n = 5 * (9 + 1); // 10 `,description:"各種演算子についての解説",tags:["解説","基礎"],title:"演算子",uri:"/software/syntax/operators/index.html"},{content:`条件分岐文は、その名の通り、ある条件を評価し、処理を分岐させる文です
+論理演算子 例 意味 ! !a NOT && a && b AND || a || b OR bool t = true; bool f = false; bool not = !t; // false bool and = t && f; // false bool or = t || f; // true また、これらの演算子を用いた式は () でまとめることができます
+bool exam = (true && false) || (false || true); // true int n = 5 * (9 + 1); // 10 `,description:"各種演算子についての解説",tags:["解説","基礎"],title:"演算子",uri:"/software/syntax/operators/index.html"},{content:`条件分岐文は、その名の通り、ある条件を評価し、処理を分岐させる文です
 例えば、センサーの値や変数の値によって処理を変えたいときに使用します
 if文 与えられた条件によって処理内容を変える文です
 条件は bool 型で与えます
@@ -84,7 +84,7 @@ if文 与えられた条件によって処理内容を変える文です
 else if 句によって一つ目の条件に合致しない場合、別の条件を与えて分岐させることもできます
 else if 句は複数回連続して記述することが可能です
 また、else 句によってどの条件にも合致しない場合の処理を記述することもできます
-if (a != b) { // aがbと等しくない場合の処理 } if (a == b) { // aがbと等しい場合の処理 } else { // aがbと等しくない場合の処理 } if (a == b) { // aがbと等しい場合の処理 } else if (a \u003c b) { // aがbと等しくないかつ、aがbより小さい場合の処理 } else if (a != 42) { // aがbと等しくないかつ、aがbより小さくなく、aが42ではない場合の処理 } else { // 上の3つの条件すべてに当てはまらない場合の処理 } if (a == b \u0026\u0026 a != c) { // aがbと等しいかつ、 aがcと等しくない場合の処理 } switch文 与えられた変数がどの値かによって処理を変える文です
+if (a != b) { // aがbと等しくない場合の処理 } if (a == b) { // aがbと等しい場合の処理 } else { // aがbと等しくない場合の処理 } if (a == b) { // aがbと等しい場合の処理 } else if (a < b) { // aがbと等しくないかつ、aがbより小さい場合の処理 } else if (a != 42) { // aがbと等しくないかつ、aがbより小さくなく、aが42ではない場合の処理 } else { // 上の3つの条件すべてに当てはまらない場合の処理 } if (a == b && a != c) { // aがbと等しいかつ、 aがcと等しくない場合の処理 } switch文 与えられた変数がどの値かによって処理を変える文です
 if文 は条件で分岐するのに対し、 switch 文 は一つの変数がどの値かという点で処理を分岐します
 case 句の後に分岐させる場合の定数を書きます
 処理の終わりには必ず break 文を書きます
@@ -99,14 +99,14 @@ for文 任意の処理を任意の回数繰り返して実行することがで�
 この変数をfor文の中で使用することもできます
 break 文が処理中にあった場合、ループを強制的に抜け出します
 continue 文が処理中にあった場合には、 continue 文以降の処理を一度スキップしてループを続けます
-for (変数の初期化; ループ継続条件; 変数の増加もしくは減少処理) { // 繰り返す処理 } // iが0から9まで10回繰り返す for (int i = 0; i \u003c= 9; i++) { // 10回繰り返される処理 } while文 任意の処理を条件が真になるまで繰り返して実行する文です
+for (変数の初期化; ループ継続条件; 変数の増加もしくは減少処理) { // 繰り返す処理 } // iが0から9まで10回繰り返す for (int i = 0; i <= 9; i++) { // 10回繰り返される処理 } while文 任意の処理を条件が真になるまで繰り返して実行する文です
 条件は if文 と同じように指定します
 break 文が処理中にあった場合、ループを強制的に抜け出します
 continue 文が処理中にあった場合には、 continue 文以降の処理を一度スキップしてループを続けます
 // 22番ピンのスイッチの値がHIGHの間何かしらの処理を行う const int SWITCH_PIN = 22; while (digitalRead(SWITCH_PIN) == HIGH) { // 何かしらの処理 } for-each文 for-each文は for文 を拡張した構文です
 配列の要素をひとつづつ取り出して、その値を処理したいときに使用します
 for(配列の値の型 内部変数名: 配列名) { // 処理 } 通常の for文 でそのような処理を記述する場合、以下の例のように、配列の長さを事前に知っている必要があります
-int length = 5; int array[length] = {0, 1, 2, 3, 4}; for(int i = 0; i \u003c length; i++) { // iがlengthを超えた場合バグが発生する tone(4, array[i] * 100); delay(1000); noTone(4); } 上の例を for-each文を利用して記述した例を下に示します
+int length = 5; int array[length] = {0, 1, 2, 3, 4}; for(int i = 0; i < length; i++) { // iがlengthを超えた場合バグが発生する tone(4, array[i] * 100); delay(1000); noTone(4); } 上の例を for-each文を利用して記述した例を下に示します
 int length = 5; // lengthはここしか使用しない int array[length] = {0, 1, 2, 3, 4}; for(int i: array) { tone(4, array[i] * 100); delay(1000); noTone(4); } この構文は主にピンの初期化などに有効です
 int OUTPUT_PINS = {4, 5, 6, 12, 13, 14, 15}; for(int i: OUTPUT_PINS) { pinMode(i, OUTPUT); } `,description:"反復処理についての解説",tags:["解説","基礎","構文","応用"],title:"反復処理",uri:"/software/syntax/iteration/index.html"},{content:`プログラムを書いているときに、同じ処理を何度も別の場所で行うことがよくあります
 例えば、ステッピングモーターを回すなどです
@@ -141,10 +141,11 @@ int array[5] = {1, 2, 3, 4, 5}; // 0番目の値を取り出す(値は1) int fir
 宣言規則は通常の配列と同じですが、変数名の後に [] を2つつける必要があります
 // 最深部の値の型が int、外側の配列の長さ4、内側の長さ5の二次元配列 int two_dim_array[4][5] = { {1, 1, 34, 0, 12}, {128, 1, 1, 0, 3}, {0, 134, 2, 5, 0}, {1, 8, 0, 1, 15} }; 二次元配列は 7セグメント や、 ステッピングモーター の表示・回転パターンを表現するためによく使用します
 `,description:"配列について解説",tags:["解説","応用"],title:"配列",uri:"/software/syntax/arrays/index.html"},{content:`定数とは、一度しか代入できない変数のことです
-例えば7セグメントの点灯パターンなど、プログラム実行中に書き換えることのない変数は、頭に const を付けることで、再代入を防ぐことができます
-const int VAL = 0; VAL = 10; // 再代入のため、エラーが発生する また、ファイルの最上部に #define 定数名 値 と記述することでも定数宣言が可能です(置換マクロ)
-#define PI 3.14 float ans = 5.0 * 5.0 * PI; ただし、 #define を使用すると、ファイル内のすべての定数名に使用した語句が含まれる部分が置き換えられてしまうので、可能な限り const を使うようにしましょう
-#define get 10 void getNum() { // この関数宣言のgetの部分も10に置き換えられてしまう } `,description:"定数について解説",tags:["解説","応用"],title:"定数",uri:"/software/syntax/constants/index.html"},{content:`このセクションでは、ハードウェアについて解説します
+例えば7セグメントの点灯パターンやピン番号など、プログラム実行中に書き換えることのない変数(コンパイル時に値が決まっている)は、頭に constexpr を付けることで、再代入を防ぐことができます
+constexpr int PIN_NUM = 0; PIN_NUM = 10; // 再代入のため、エラーが発生する また、ファイルの最上部に #define 定数名 値 と記述することでも定数宣言が可能です(マクロ置換)
+#define PI 3.14 float ans = 5.0 * 5.0 * PI; ただし、#defineは単なる文字列の置き換えであるということに注意する必要があります
+基本的にはconstexprを使うようにしましょう
+`,description:"定数について解説",tags:["解説","応用"],title:"定数",uri:"/software/syntax/constants/index.html"},{content:`このセクションでは、ハードウェアについて解説します
 `,description:"",tags:null,title:"ハードウェア",uri:"/hardware/index.html"},{content:`県大会レベルの例題をいくつか作題して載せておくので解いてみてください
 レベル0から順に難易度が上がっていきます
 また、並行して過去問も解いてみましょう
@@ -184,16 +185,16 @@ Arduino IDEでプログラムをビルドすると、自動的に Arduino.h と�
 void clock() { digitalWrite(5, 1); delay(5); digitalWrite(5, 0); } delay の秒数を指定できるバージョン
 void clock(int ms) { digitalWrite(5, 1); delay(ms); digitalWrite(5, 0); } ステッピングモーター ステッピングモーターを回転させる関数です
 二次元配列をパターンに使用した例
-void stepper() { const int PTN[4][4] = { { 1, 1, 0, 0 }, { 0, 1, 1, 0 }, { 0, 0, 1, 1 }, { 1, 0, 0, 1 } }; for (int i = 0; i \u003c 4; i++) { for (int pin = 12; pin \u003c= 15; pin++) { digitalWrite(pin, PTN[i][pin - 12]); } clock(); } } ビットでパターンを作成した例 (暗記はしやすいかもしれない)
-void stepper() { const int PTN[4] = { 12, 6, 3, 9 }; // 二進数に変換すると意味が分かる for (int p : PTN) { for (int j = 0; j \u003c 4; j++) { digitalWrite(j + 6, (p \u003e\u003e j) \u0026 1); } clock(); } } 7セグメント 7セグメントを光らせるためのいろいろな関数です
-// 点灯パターン const int SEG_PTN[][7] = { { 1, 1, 1, 1, 1, 1, 0 }, // 0 { 0, 1, 1, 0, 0, 0, 0 }, // 1 { 1, 1, 0, 1, 1, 0, 1 }, // 2 { 1, 1, 1, 1, 0, 0, 1 }, // 3 { 0, 1, 1, 0, 0, 1, 1 }, // 4 { 1, 0, 1, 1, 0, 1, 1 }, // 5 { 1, 0, 1, 1, 1, 1, 1 }, // 6 { 1, 1, 1, 0, 0, 1, 0 }, // 7 { 1, 1, 1, 1, 1, 1, 1 }, // 8 { 1, 1, 1, 1, 0, 1, 1 }, // 9 { 0, 0, 0, 0, 0, 0, 0 }, // 空白(リセット用) }; // 信号だけ送る関数 void seg(int num) { for (int i = 12; i \u003c= 18; i++) { digitalWrite(i, SEG_PTN[num][i - 12]); } } // 左側だけ光らせる関数 void segL(int num) { seg(10); //残像防止 digitalWrite(2, 1); digitalWrite(3, 0); seg(num); } // 右側だけ光らせる関数 void segR(int num) { seg(10); //残像防止 digitalWrite(2, 0); digitalWrite(3, 1); seg(num); } // 両方を指定した時間光らせる関数 void segW(int l, int r, int duration) { for (int i = 0; i \u003c= duration; i++) { if (i % 2 == 0) { segL(l); } else { segR(r); } delay(1); } } ステッピングモーターと7セグメント 県大会レベルでは一番の難関だと思うので、あえてここにはコードを書きませんが、ヒントは
+void stepper() { const int PTN[4][4] = { { 1, 1, 0, 0 }, { 0, 1, 1, 0 }, { 0, 0, 1, 1 }, { 1, 0, 0, 1 } }; for (int i = 0; i < 4; i++) { for (int pin = 12; pin <= 15; pin++) { digitalWrite(pin, PTN[i][pin - 12]); } clock(); } } ビットでパターンを作成した例 (暗記はしやすいかもしれない)
+void stepper() { const int PTN[4] = { 12, 6, 3, 9 }; // 二進数に変換すると意味が分かる for (int p : PTN) { for (int j = 0; j < 4; j++) { digitalWrite(j + 6, (p >> j) & 1); } clock(); } } 7セグメント 7セグメントを光らせるためのいろいろな関数です
+// 点灯パターン const int SEG_PTN[][7] = { { 1, 1, 1, 1, 1, 1, 0 }, // 0 { 0, 1, 1, 0, 0, 0, 0 }, // 1 { 1, 1, 0, 1, 1, 0, 1 }, // 2 { 1, 1, 1, 1, 0, 0, 1 }, // 3 { 0, 1, 1, 0, 0, 1, 1 }, // 4 { 1, 0, 1, 1, 0, 1, 1 }, // 5 { 1, 0, 1, 1, 1, 1, 1 }, // 6 { 1, 1, 1, 0, 0, 1, 0 }, // 7 { 1, 1, 1, 1, 1, 1, 1 }, // 8 { 1, 1, 1, 1, 0, 1, 1 }, // 9 { 0, 0, 0, 0, 0, 0, 0 }, // 空白(リセット用) }; // 信号だけ送る関数 void seg(int num) { for (int i = 12; i <= 18; i++) { digitalWrite(i, SEG_PTN[num][i - 12]); } } // 左側だけ光らせる関数 void segL(int num) { seg(10); //残像防止 digitalWrite(2, 1); digitalWrite(3, 0); seg(num); } // 右側だけ光らせる関数 void segR(int num) { seg(10); //残像防止 digitalWrite(2, 0); digitalWrite(3, 1); seg(num); } // 両方を指定した時間光らせる関数 void segW(int l, int r, int duration) { for (int i = 0; i <= duration; i++) { if (i % 2 == 0) { segL(l); } else { segR(r); } delay(1); } } ステッピングモーターと7セグメント 県大会レベルでは一番の難関だと思うので、あえてここにはコードを書きませんが、ヒントは
 ステッピングモータのクロックの前に余計な信号を入れないこと ステッピングモータのクロックの間も7セグメントを点灯させること です
 どうしてもコードが見たければ以下のリポジトリに書いてあるので見てください https://github.com/jinnosukeKato/Monokon-Kanagawa-2022
 押して離されたら(バンプ) const int SW = 22; void loop() { while(digitalRead(SW) == 1) { // ここに押されている間の待機動作 if(digitalRead(SW) != 1) { // ここには離されたときに動作する内容 } } } `,description:"",tags:["資料"],title:"サンプルコード集",uri:"/software/sample-code-collection/index.html"},{content:`エラーコードが出てるときはエラーコードを読む！
 エラーコードは赤色で、英語で、よくわからなくて、怖いかもしれませんが、恐れることはありません
 エラーコードと仲良くなりましょう
 このページを読んでも分からないときは、ほかの部員に相談しましょう
-とにかく動かないとき flowchart TD Root(["動かない！"]) --\u003e CanCompile{"コンパイルが通るか"}; CanCompile -- yes --\u003e Program{"プログラムの内容は正しいか\\n(分からなければ他人に読んでもらう)"}; CanCompile -- no --\u003e USBConnection{"PCとArduinoが接続されているか"}; USBConnection -- yes --\u003e PortSetting{"ポートの指定は正しいか"}; PortSetting -- yes --\u003eSyntaxErr["プログラムの構文が正しくない\\nエラーコードを読んで修正"]; PortSetting -- no --\u003e ChangePort["ポートの指定を直す"]; USBConnection -- no --\u003e ConnectUSB["USBを接続する"]; Program -- yes --\u003e Hardware; Program -- no --\u003e 正しいプログラムを書く; Hardware["ハードウェアに\\n問題がある可能性が高い"] --\u003e PowerOkay{"電源が接続されているか"}; PowerOkay -- yes --\u003e TapOkay{"電源タップに通電しているか"}; PowerOkay -- no --\u003e PowerTurnOn["電源を接続する"]; TapOkay -- yes --\u003e ActOtherPart{"動かない部品は一つか"}; TapOkay -- no --\u003e ConnectTap["タップを接続する"]; ActOtherPart -- yes --\u003e IsConnectionErr{"ワイヤーが断線しているか"}; IsConnectionErr -- yes --\u003e ConnectionErr; IsConnectionErr -- no --\u003e PartFailure["パーツもしくは\\nICが故障している"]; ActOtherPart -- no --\u003e IsPluralPartsFailure{"すべてのパーツが動かないか"}; IsPluralPartsFailure -- yes --\u003e IsArduinoErr{"Arduinoと\\n制御対象基盤との\\n接続はできているか"}; IsPluralPartsFailure -- no --\u003e IcFailure["制御対象基盤の\\nICか回路の故障が疑わしい"]; IsArduinoErr -- yes --\u003e ArduinoErr; IsArduinoErr -- no --\u003e ConnectionErr; ArduinoErr["Arduinoの故障が疑われる"] ConnectionErr["基板or部品間の接続を直す"]プログラムのどこが間違っているかわからないとき flowchart TD ROOT["動かない！"] --\u003e ExplainToTheDuckRoopS; ExplainToTheDuckRoopS[/"一行ずつ読む"\\] --\u003e ExPlainToTheDuck; ExPlainToTheDuck["誰かに説明するようにじっくり読む"] --\u003e CheckSyntaxErr; CheckSyntaxErr{"間違っている箇所を発見した"}; CheckSyntaxErr -- yes --\u003e Fix["修正する"] --\u003e Run; Run{"正しく動作するか"}; Run -- yes --\u003e End["修正完了"]; Run -- no --\u003e ROOT; CheckSyntaxErr -- no --\u003e ExplainToTheDuckRoopE[\\全文読んだ/]; ExplainToTheDuckRoopE -- yes --\u003e 他人に相談; ExplainToTheDuckRoopE -- no --\u003e ExplainToTheDuckRoopS;`,description:"トラブルシューティングのページ",tags:["基礎","資料"],title:"動かないときは",uri:"/trouble-shooting/index.html"},{content:`説明 7つのセグメント(棒)と小数点の点灯を切り替えることで、数字や文字を表示することができます
+とにかく動かないとき flowchart TD Root(["動かない！"]) --> CanCompile{"コンパイルが通るか"}; CanCompile -- yes --> Program{"プログラムの内容は正しいか\\n(分からなければ他人に読んでもらう)"}; CanCompile -- no --> USBConnection{"PCとArduinoが接続されているか"}; USBConnection -- yes --> PortSetting{"ポートの指定は正しいか"}; PortSetting -- yes -->SyntaxErr["プログラムの構文が正しくない\\nエラーコードを読んで修正"]; PortSetting -- no --> ChangePort["ポートの指定を直す"]; USBConnection -- no --> ConnectUSB["USBを接続する"]; Program -- yes --> Hardware; Program -- no --> 正しいプログラムを書く; Hardware["ハードウェアに\\n問題がある可能性が高い"] --> PowerOkay{"電源が接続されているか"}; PowerOkay -- yes --> TapOkay{"電源タップに通電しているか"}; PowerOkay -- no --> PowerTurnOn["電源を接続する"]; TapOkay -- yes --> ActOtherPart{"動かない部品は一つか"}; TapOkay -- no --> ConnectTap["タップを接続する"]; ActOtherPart -- yes --> IsConnectionErr{"ワイヤーが断線しているか"}; IsConnectionErr -- yes --> ConnectionErr; IsConnectionErr -- no --> PartFailure["パーツもしくは\\nICが故障している"]; ActOtherPart -- no --> IsPluralPartsFailure{"すべてのパーツが動かないか"}; IsPluralPartsFailure -- yes --> IsArduinoErr{"Arduinoと\\n制御対象基盤との\\n接続はできているか"}; IsPluralPartsFailure -- no --> IcFailure["制御対象基盤の\\nICか回路の故障が疑わしい"]; IsArduinoErr -- yes --> ArduinoErr; IsArduinoErr -- no --> ConnectionErr; ArduinoErr["Arduinoの故障が疑われる"] ConnectionErr["基板or部品間の接続を直す"]プログラムのどこが間違っているかわからないとき flowchart TD ROOT["動かない！"] --> ExplainToTheDuckRoopS; ExplainToTheDuckRoopS[/"一行ずつ読む"\\] --> ExPlainToTheDuck; ExPlainToTheDuck["誰かに説明するようにじっくり読む"] --> CheckSyntaxErr; CheckSyntaxErr{"間違っている箇所を発見した"}; CheckSyntaxErr -- yes --> Fix["修正する"] --> Run; Run{"正しく動作するか"}; Run -- yes --> End["修正完了"]; Run -- no --> ROOT; CheckSyntaxErr -- no --> ExplainToTheDuckRoopE[\\全文読んだ/]; ExplainToTheDuckRoopE -- yes --> 他人に相談; ExplainToTheDuckRoopE -- no --> ExplainToTheDuckRoopS;`,description:"トラブルシューティングのページ",tags:["基礎","資料"],title:"動かないときは",uri:"/trouble-shooting/index.html"},{content:`説明 7つのセグメント(棒)と小数点の点灯を切り替えることで、数字や文字を表示することができます
 制御対象基盤には2つ取り付けてあり、指定のピンに信号を送ることで各7セグメントの表示のON/OFFを切り替えることができます
 制御方法 各セグメントには9つのピンがあり、2つ合計で18個のピンを使用します
 9つのうち1つは表示の切り替え(ON/OFF)に使用し、残りの8つで各セグメントと小数点のON/OFFを切り替えます
@@ -204,7 +205,7 @@ void stepper() { const int PTN[4] = { 12, 6, 3, 9 }; // 二進数に変換する
 2^10は1024なので0~1023の整数値が返ってきます
 この関数で値を読み取ることができるのは A0 などの　A から始まるピン番号のピンのみです
 また、番号は A0 のように A を含めて指定してください
-サンプルコード analogRead(ピン番号); // A0の値で周波数を変更 int value = analogRead(A0); if(value \u003c= 500) { tone(4, 200, 1000); } else if(value \u003c= 524) { tone(4, 400, 1000); } else { tone(4, 800, 1000); } `,description:"",tags:["解説","組み込み関数","基礎"],title:"analogRead",uri:"/software/embedded-functions/analogread/index.html"},{content:"",description:"",tags:null,title:"Categories",uri:"/categories/index.html"},{content:`説明 DCモーターは回る、止まるの動作のみをする基本的なモーターです
+サンプルコード analogRead(ピン番号); // A0の値で周波数を変更 int value = analogRead(A0); if(value <= 500) { tone(4, 200, 1000); } else if(value <= 524) { tone(4, 400, 1000); } else { tone(4, 800, 1000); } `,description:"",tags:["解説","組み込み関数","基礎"],title:"analogRead",uri:"/software/embedded-functions/analogread/index.html"},{content:"",description:"",tags:null,title:"Categories",uri:"/categories/index.html"},{content:`説明 DCモーターは回る、止まるの動作のみをする基本的なモーターです
 プログラムで、回転する方向、速度、停止の素早さを制御できます
 制御方法 2つのピンとクロックで制御します
 ピン1 ピン2 動作 LOW LOW 緩やかな停止 HIGH HIGH 急停止 HIGH LOW 回転 LOW HIGH 逆回転 `,description:"",tags:["ハードウェア","部品","解説","基礎","出力部品"],title:"DCモーター",uri:"/hardware/about-parts/output-parts/dc-motor/index.html"},{content:`リファレンス 説明 指定したミリ秒の間、プログラム全体の動作を停止させます
@@ -219,7 +220,7 @@ void stepper() { const int PTN[4] = { 12, 6, 3, 9 }; // 二進数に変換する
 サンプルコード digitalWrite(ピン番号, HIGH); // HIGHを出力 digitalWrite(ピン番号, LOW); // LOWを出力 // 5番ピンを使用したクロック動作 int clock_pin = 5; digitalWrite(clock_pin, HIGH); delay(5); digitalWrite(clock_pin, LOW); `,description:"",tags:["解説","組み込み関数","基礎"],title:"digitalWrite",uri:"/software/embedded-functions/digitalwrite/index.html"},{content:`リファレンス 説明 プログラムが書き込まれ、実行されてからの経過時間(ミリ秒)を返す関数です
 注意すべき点 返り値は unsigned long 型です
 int に値を代入することも可能ですが、 unsigned long は int や long と比べて保持可能なデータ量が大きいので、 長い時間を計測する場合などにエラーを引き起こす原因となることがあります
-サンプルコード unsigned long time = millis(); // delayを使わないクロック unsigned long start_ms; // クロックを開始する関数 void clock_start() { digitalWrite(5, HIGH); start_ms = millis(); } // 定期実行してクロックを停止させる関数 void clock_check(unsigned long duration) { if(millis() - start_ms \u003e= duration) { digitalWrite(5, LOW); } } `,description:"",tags:["解説","組み込み関数","基礎"],title:"millis",uri:"/software/embedded-functions/millis/index.html"},{content:`リファレンス 説明 tone で鳴らした音を消す関数です
+サンプルコード unsigned long time = millis(); // delayを使わないクロック unsigned long start_ms; // クロックを開始する関数 void clock_start() { digitalWrite(5, HIGH); start_ms = millis(); } // 定期実行してクロックを停止させる関数 void clock_check(unsigned long duration) { if(millis() - start_ms >= duration) { digitalWrite(5, LOW); } } `,description:"",tags:["解説","組み込み関数","基礎"],title:"millis",uri:"/software/embedded-functions/millis/index.html"},{content:`リファレンス 説明 tone で鳴らした音を消す関数です
 注意すべき点 特になし
 サンプルコード noTone(ピン番号); // 4番で鳴らした音を1秒後に消す tone(4, 440); delay(1000); noTone(4); `,description:"",tags:["解説","組み込み関数","基礎"],title:"noTone",uri:"/software/embedded-functions/notone/index.html"},{content:`リファレンス 説明 指定したピンをインプットもしくはアウトプットとして設定します
 入力を読み取る場合(スイッチやセンサー)にはインプットを、出力を行う場合にはアウトプットを指定してください
@@ -265,4 +266,4 @@ analogRead 関数を使用するとアナログ値で読み取ることができ
 使用方法 digitalRead 関数を使用すると HIGH / LOW で値を読み取ることができます
 analogRead 関数を使用するとアナログ値で読み取ることができます
 あまりHIGH/LOWで読み取るような問題は出題されないので analogRead 関数を使用することが一般的です
-サンプルコード int volume = analogRead(ピン番号); if (volume \u003c= 500) { // 中央より下の値のときの処理 } else if(volume \u003c= 524) { // 中央付近のときの処理 } else { // 中央より上の値のときの処理 } `,description:"",tags:["ハードウェア","部品","解説","基礎","入力部品"],title:"可変抵抗",uri:"/hardware/about-parts/input-parts/variable-resister/index.html"},{content:"",description:"",tags:null,title:"解説",uri:"/tags/%E8%A7%A3%E8%AA%AC/index.html"},{content:"",description:"",tags:null,title:"関数",uri:"/tags/%E9%96%A2%E6%95%B0/index.html"},{content:"",description:"",tags:null,title:"基礎",uri:"/tags/%E5%9F%BA%E7%A4%8E/index.html"},{content:"",description:"",tags:null,title:"構文",uri:"/tags/%E6%A7%8B%E6%96%87/index.html"},{content:"",description:"",tags:null,title:"資料",uri:"/tags/%E8%B3%87%E6%96%99/index.html"},{content:"",description:"",tags:null,title:"出力部品",uri:"/tags/%E5%87%BA%E5%8A%9B%E9%83%A8%E5%93%81/index.html"},{content:"",description:"",tags:null,title:"組み込み関数",uri:"/tags/%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0/index.html"},{content:"",description:"",tags:null,title:"入力部品",uri:"/tags/%E5%85%A5%E5%8A%9B%E9%83%A8%E5%93%81/index.html"},{content:"",description:"",tags:null,title:"部品",uri:"/tags/%E9%83%A8%E5%93%81/index.html"}]
+サンプルコード int volume = analogRead(ピン番号); if (volume <= 500) { // 中央より下の値のときの処理 } else if(volume <= 524) { // 中央付近のときの処理 } else { // 中央より上の値のときの処理 } `,description:"",tags:["ハードウェア","部品","解説","基礎","入力部品"],title:"可変抵抗",uri:"/hardware/about-parts/input-parts/variable-resister/index.html"},{content:"",description:"",tags:null,title:"解説",uri:"/tags/%E8%A7%A3%E8%AA%AC/index.html"},{content:"",description:"",tags:null,title:"関数",uri:"/tags/%E9%96%A2%E6%95%B0/index.html"},{content:"",description:"",tags:null,title:"基礎",uri:"/tags/%E5%9F%BA%E7%A4%8E/index.html"},{content:"",description:"",tags:null,title:"構文",uri:"/tags/%E6%A7%8B%E6%96%87/index.html"},{content:"",description:"",tags:null,title:"資料",uri:"/tags/%E8%B3%87%E6%96%99/index.html"},{content:"",description:"",tags:null,title:"出力部品",uri:"/tags/%E5%87%BA%E5%8A%9B%E9%83%A8%E5%93%81/index.html"},{content:"",description:"",tags:null,title:"組み込み関数",uri:"/tags/%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E9%96%A2%E6%95%B0/index.html"},{content:"",description:"",tags:null,title:"入力部品",uri:"/tags/%E5%85%A5%E5%8A%9B%E9%83%A8%E5%93%81/index.html"},{content:"",description:"",tags:null,title:"部品",uri:"/tags/%E9%83%A8%E5%93%81/index.html"}]
